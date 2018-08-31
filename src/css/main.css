@@ -1,0 +1,41 @@
+body{
+    display:flex;
+    margin: 0;
+    justify-content: center;
+}
+
+#container {
+    margin: 0 auto;
+}
+
+button {
+    background-color: lightgray;
+    border: 0px;
+    margin:5px;
+    padding: 2px 6px;
+}
+
+li {
+    list-style-type: none;
+}
+
+li div{
+    display: flex;
+    justify-content: stretch;
+    align-items: center;
+}
+
+li div span{
+    flex: 1;
+}
+
+li div button{
+    width:15px;
+    height:15px;
+    padding:0px;
+    text-align: center;
+}
+
+.finished {
+    text-decoration-line: line-through;
+}
