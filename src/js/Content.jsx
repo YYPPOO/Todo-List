@@ -1,6 +1,5 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { provider } from 'react-redux'
 import { createStore } from 'redux'
 import "../css/main.css"
 
@@ -59,35 +58,10 @@ class Item extends React.Component {
   }
 }
 
-// class Tab extends React.Component {
-//   constructor(props) {
-//     super(props);
-//   }
-//   render() {
-//     return <button onClick=
-//   }
-// }
-
 class Application extends React.Component {
   constructor(props) {
     super(props);
     this.state = store.getState();
-    // {
-    //   filter:1,
-    //   todoList:[
-    //     {
-    //       index: 0,
-    //       content: "吃飯",
-    //       finished: 1
-    //     },
-    //     {
-    //       index: 1,
-    //       content: "買飲料",
-    //       finished: 0
-    //     }
-    //   ],
-    //   inputValue:""
-    // };
   }
 
   render() {
@@ -115,7 +89,6 @@ class Application extends React.Component {
           <button onClick={() => this.changeFilter(1)}>未完成</button>
           <button onClick={() => this.changeFilter(0)}>已完成</button>
           <button onClick={() => this.changeFilter(-1)}>全部</button>
-          {/* <div className="title">Todo List App</div> */}
           <Input
             id="input-box"
             toSubmit={this.handleSubmit.bind(this)}
@@ -134,7 +107,6 @@ class Application extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    console.log(e.target[0].value);
     store.dispatch({
       type:"SubmitItem",
     });
@@ -215,9 +187,6 @@ window.addEventListener("load", ()=>{
     ],
     inputValue:""
   });
-  console.log(store.getState());
-  
-  
   const contDiv = document.getElementById("container");
   contDiv ? ReactDOM.render(<Application />, contDiv) : false;
 })
